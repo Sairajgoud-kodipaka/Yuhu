@@ -156,15 +156,15 @@ function AdminDashboard() {
 
         {/* Statistics */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Statistics</Text>
+          <Text style={styles.sectionTitle}>📊 Statistics</Text>
           <View style={styles.statsGrid}>
             <View style={styles.statCard}>
               <Text style={styles.statNumber}>3,847</Text>
-              <Text style={styles.statLabel}>Total Users</Text>
+              <Text style={styles.statLabel}>Users</Text>
             </View>
             <View style={styles.statCard}>
               <Text style={styles.statNumber}>245</Text>
-              <Text style={styles.statLabel}>Active Today</Text>
+              <Text style={styles.statLabel}>Active</Text>
             </View>
             <View style={styles.statCard}>
               <Text style={styles.statNumber}>28</Text>
@@ -177,10 +177,27 @@ function AdminDashboard() {
           </View>
         </View>
 
+        {/* Growth Chart */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>📈 Growth (Last 30 days)</Text>
+          <View style={styles.chartContainer}>
+            <View style={styles.chartPlaceholder}>
+              <View style={styles.chartLine}>
+                <View style={[styles.chartPoint, { left: '10%', bottom: '20%' }]} />
+                <View style={[styles.chartPoint, { left: '30%', bottom: '35%' }]} />
+                <View style={[styles.chartPoint, { left: '50%', bottom: '50%' }]} />
+                <View style={[styles.chartPoint, { left: '70%', bottom: '65%' }]} />
+                <View style={[styles.chartPoint, { left: '90%', bottom: '80%' }]} />
+              </View>
+              <Text style={styles.chartPlaceholderText}>Line Chart</Text>
+            </View>
+          </View>
+        </View>
+
         {/* Pending Approvals */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
-            <Text style={styles.sectionTitle}>Pending Approvals (5)</Text>
+            <Text style={styles.sectionTitle}>⏳ Pending Approvals (5)</Text>
             <TouchableOpacity>
               <Text style={styles.seeAll}>View All</Text>
             </TouchableOpacity>
@@ -221,7 +238,7 @@ function AdminDashboard() {
 
         {/* Quick Actions */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Quick Actions</Text>
+          <Text style={styles.sectionTitle}>🔧 Quick Actions</Text>
           <View style={styles.actionsGrid}>
             <TouchableOpacity style={styles.actionCard}>
               <Ionicons name="people-outline" size={24} color={colors.primary} />
@@ -500,5 +517,38 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
     color: colors.textPrimary,
     textAlign: 'center',
+  },
+  chartContainer: {
+    marginTop: spacing.md,
+  },
+  chartPlaceholder: {
+    height: 200,
+    backgroundColor: colors.surface,
+    borderRadius: borderRadius.lg,
+    borderWidth: 1,
+    borderColor: colors.border,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  chartLine: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  chartPoint: {
+    position: 'absolute',
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: colors.primary,
+    transform: [{ translateX: -4 }, { translateY: 4 }],
+  },
+  chartPlaceholderText: {
+    fontSize: typography.fontSize.sm,
+    fontFamily: 'Inter',
+    color: colors.textMuted,
+    zIndex: 1,
   },
 });

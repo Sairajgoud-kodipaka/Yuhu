@@ -870,6 +870,53 @@ Event Detail Screen (Screen 5)
 ╚═══════════════════════════════════════╝
 ```
 
+**Navigation Flow:**
+```
+Home Tab (Dashboard)
+       │
+       │ (User role = admin)
+       ▼
+Admin Dashboard (Screen 8)
+       │
+       ├─── (Tap [☰] menu) ──→ Side Navigation Drawer
+       │
+       ├─── (Tap [🔔] notifications) ──→ Notifications List
+       │
+       ├─── (Tap "View All" in Pending Approvals) ──→ Approvals List Screen
+       │
+       ├─── (Tap Approve/Reject) ──→ Approval action (with confirmation)
+       │
+       └─── (Tap Quick Action cards) ──→
+            ├─── Manage Users ──→ User Management Screen
+            ├─── View Logs ──→ System Logs Screen
+            ├─── Reports ──→ Analytics/Reports Screen
+            └─── Settings ──→ Admin Settings Screen
+```
+
+Features:
+- Admin-only access (shown when user role is 'admin')
+- Statistics cards showing:
+  * Total Users count
+  * Active Users (today)
+  * Total Clubs count
+  * Total Events count
+- Growth chart displaying user/activity trends over last 30 days
+- Pending Approvals section with:
+  * Approval count badge
+  * List of pending announcements/events
+  * Approve/Reject buttons for each item
+  * Time ago indicator
+  * "View All" link to see complete list
+- Quick Actions grid with:
+  * Manage Users (user administration)
+  * View Logs (system activity logs)
+  * Reports (analytics and reports)
+  * Settings (admin configuration)
+- Notification badge showing pending approvals count
+- Menu button (☰) for additional admin options
+- Pull to refresh to update statistics and approvals
+- Real-time updates for pending approvals count
+
 ---
 
 ### Web Screens (Responsive)
