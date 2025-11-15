@@ -13,7 +13,7 @@ All screens designed mobile-first, then adapted for web.
 ┌──────────────────┐
 │  Splash Screen   │
 │   (YUHU Logo +   │
-│  Purple Bear)    │
+│  Verification)   │
 └────────┬─────────┘
          │
          ▼
@@ -24,9 +24,15 @@ All screens designed mobile-first, then adapted for web.
         │Yes              │
         ▼                 ▼
 ┌───────────────┐   ┌─────────────┐
-│   Dashboard   │   │Login Screen │
-│   (Main App)  │   └──────┬──────┘
-└───────────────┘          │
+│   Dashboard   │   │  Onboarding │
+│   (Main App)  │   │   (3 Screens)│
+└───────────────┘   └──────┬──────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │Login Screen │
+                    │  (Premium)  │
+                    └──────┬──────┘
                      ┌─────┴──────┐
                      │            │
               ┌──────▼───┐  ┌─────▼──────┐
@@ -38,6 +44,7 @@ All screens designed mobile-first, then adapted for web.
                             ▼
                     ┌───────────────┐
                     │   Dashboard   │
+                    │   (Home Tab)  │
                     └───────────────┘
 ```
 
@@ -101,12 +108,91 @@ All screens designed mobile-first, then adapted for web.
 
 ### Mobile Screens (Priority)
 
-#### 1. Login Screen
+#### 0. Onboarding (3 Screens)
+
+**Screen 1: Official Campus Voice**
 ```
 ╔═══════════════════════════════════════╗
-║         🐻 YUHU Logo                  ║
+║                              [Skip]   ║
 ║                                       ║
-║       Your Voice, Your Campus         ║
+║        👥 ✓                           ║
+║         YUHU                          ║
+║    Official Campus Voice              ║
+║                                       ║
+║         🛡️                            ║
+║    (Purple Icon Circle)               ║
+║                                       ║
+║    Official Campus Voice              ║
+║                                       ║
+║  Get verified, official updates       ║
+║  directly from your campus leaders    ║
+║  and clubs. No confusion, no          ║
+║  misinformation.                      ║
+║                                       ║
+║    • • •                             ║
+║                                       ║
+║   [        Next        →]            ║
+╚═══════════════════════════════════════╝
+```
+
+**Screen 2: Stay Connected**
+```
+╔═══════════════════════════════════════╗
+║                              [Skip]   ║
+║                                       ║
+║        👥 ✓                           ║
+║         YUHU                          ║
+║    Official Campus Voice              ║
+║                                       ║
+║         🔔                            ║
+║    (Blue Icon Circle)                 ║
+║                                       ║
+║      Stay Connected                   ║
+║                                       ║
+║  Announcements, elections, events,    ║
+║  and club updates—all in one place.   ║
+║  Never miss what matters.             ║
+║                                       ║
+║    • • •                             ║
+║                                       ║
+║   [        Next        →]            ║
+╚═══════════════════════════════════════╝
+```
+
+**Screen 3: Your Voice Matters**
+```
+╔═══════════════════════════════════════╗
+║                              [Skip]   ║
+║                                       ║
+║        👥 ✓                           ║
+║         YUHU                          ║
+║    Official Campus Voice              ║
+║                                       ║
+║         👥                            ║
+║    (Green Icon Circle)                ║
+║                                       ║
+║    Your Voice Matters                 ║
+║                                       ║
+║  Participate in campus elections,     ║
+║  join clubs, and connect with your    ║
+║  community. Your campus, your         ║
+║  platform.                            ║
+║                                       ║
+║    • • •                             ║
+║                                       ║
+║   [   Get Started   →]               ║
+╚═══════════════════════════════════════╝
+```
+
+#### 1. Login Screen (Premium)
+```
+╔═══════════════════════════════════════╗
+║        👥 ✓                           ║
+║         YUHU                          ║
+║    Official Campus Voice              ║
+║                                       ║
+║    Welcome Back                       ║
+║    Sign in to continue                ║
 ║                                       ║
 ║  ┌─────────────────────────────────┐ ║
 ║  │ 📧 Email                        │ ║
@@ -122,7 +208,10 @@ All screens designed mobile-first, then adapted for web.
 ║           Forgot Password?            ║
 ║                                       ║
 ║  ┌─────────────────────────────────┐ ║
-║  │         LOGIN [→]               │ ║ ← Purple #8B5CF6
+║  │       Sign In          [→]      │ ║ ← Purple #8B5CF6
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║          ──── or ────                 ║
 ║  └─────────────────────────────────┘ ║
 ║                                       ║
 ║   Don't have an account? Register     ║
@@ -169,6 +258,19 @@ Inputs: #27272A (Dark gray)
 Bottom Tab: [🏠] [🎯] [📅] [💬] [👤]
            Home Clubs Events Chat Profile
            (Purple highlight on active)
+
+Features:
+- Personalized greeting with user name
+- Quick stats cards (Clubs, Events, Unread messages)
+- Horizontal scrollable upcoming events carousel
+- Recent announcements feed with club badges
+- Notification badge on header (tap to view)
+- Menu button (☰) opens side navigation drawer
+- Pull to refresh for latest updates
+
+Note: For Admin users, this screen shows admin-specific
+content with statistics, pending approvals, and management
+actions. See Admin Dashboard section for details.
 ```
 
 #### 3. Clubs List Screen
@@ -201,9 +303,67 @@ Bottom Tab: [🏠] [🎯] [📅] [💬] [👤]
 ║  └─────────────────────────────────┘ ║
 ║                   ⋮                   ║
 ╚═══════════════════════════════════════╝
+Bottom Tab: [🏠] [🎯] [📅] [💬] [👤]
+           Home Clubs Events Chat Profile
+           (Purple highlight on Clubs)
+
+Features:
+- Search bar at top for quick club lookup
+- Filter chips: All, My Clubs, Technical, Sports, Cultural
+- Clubs grouped by council/category
+- Each club card shows:
+  * Icon/emoji identifier
+  * Club name
+  * Short description/tagline
+  * Member count
+  * Join status (✓ Joined or + Join button)
+- Tap club card to view Club Detail screen
+- Pull to refresh to update club list
+- Scrollable list with section headers
 ```
 
 #### 4. Club Detail Screen
+
+**Template (works for all clubs):**
+```
+╔═══════════════════════════════════════╗
+║  [←]        [Club Name]          [⋮] ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │                                 │ ║
+║  │         [Club Logo/Banner]      │ ║
+║  │                                 │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  [Icon] [Club Name]                   ║
+║  🏛️ [Council Name]                    ║
+║  👥 [X] members                        ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[✓ Joined/+ Join] [Message] [Share]│ ║ ← Action buttons
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  📝 About                             ║
+║  [Club description text...]          ║
+║                                       ║
+║  👨‍💼 Coordinators                      ║
+║  👤 [Coordinator 1]  👤 [Coordinator 2]║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[Announcements] [Events] [Members]│ ║ ← Tabs
+║  └─────────────────────────────────┘ ║
+║  ┌─────────────────────────────────┐ ║
+║  │ 📢 [Announcement Title]          │ ║
+║  │ [Announcement preview text...]   │ ║
+║  │ [Time ago]                       │ ║
+║  └─────────────────────────────────┘ ║
+║                   ⋮                   ║
+╚═══════════════════════════════════════╝
+```
+
+**Examples for all mock clubs:**
+
+**Coding Club (Technical Council):**
 ```
 ╔═══════════════════════════════════════╗
 ║  [←]           Coding Club        [⋮] ║
@@ -219,18 +379,17 @@ Bottom Tab: [🏠] [🎯] [📅] [💬] [👤]
 ║  👥 245 members                       ║
 ║                                       ║
 ║  ┌─────────────────────────────────┐ ║
-║  │  [✓ Joined]  [Message]  [Share]│ ║ ← Action buttons
+║  │  [✓ Joined]  [Message]  [Share]│ ║
 ║  └─────────────────────────────────┘ ║
 ║                                       ║
 ║  📝 About                             ║
-║  A community of coding enthusiasts    ║
-║  learning and building together...    ║
+║  Learn and build together             ║
 ║                                       ║
 ║  👨‍💼 Coordinators                      ║
 ║  👤 Ayush Kumar    👤 Priya Singh     ║
 ║                                       ║
 ║  ┌─────────────────────────────────┐ ║
-║  │[Announcements] [Events] [Members]│ ║ ← Tabs
+║  │[Announcements] [Events] [Members]│ ║
 ║  └─────────────────────────────────┘ ║
 ║  ┌─────────────────────────────────┐ ║
 ║  │ 📢 Hackathon Registration Open  │ ║
@@ -239,6 +398,203 @@ Bottom Tab: [🏠] [🎯] [📅] [💬] [👤]
 ║  └─────────────────────────────────┘ ║
 ║                   ⋮                   ║
 ╚═══════════════════════════════════════╝
+```
+
+**Robotics Club (Technical Council):**
+```
+╔═══════════════════════════════════════╗
+║  [←]          Robotics Club       [⋮] ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │                                 │ ║
+║  │         [Club Logo/Banner]      │ ║
+║  │                                 │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  🤖 Robotics Club                     ║
+║  🏛️ Technical Council                 ║
+║  👥 180 members                       ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │  [+ Join]  [Message]  [Share]  │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  📝 About                             ║
+║  Build the future                     ║
+║                                       ║
+║  👨‍💼 Coordinators                      ║
+║  👤 Rohan Mehta    👤 Anjali Patel   ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[Announcements] [Events] [Members]│ ║
+║  └─────────────────────────────────┘ ║
+║  ┌─────────────────────────────────┐ ║
+║  │ 📢 Robotics Workshop Next Week  │ ║
+║  │ Learn Arduino and sensors...    │ ║
+║  │ 1 day ago                       │ ║
+║  └─────────────────────────────────┘ ║
+║                   ⋮                   ║
+╚═══════════════════════════════════════╝
+```
+
+**Basketball Club (Sports Council):**
+```
+╔═══════════════════════════════════════╗
+║  [←]        Basketball Club       [⋮] ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │                                 │ ║
+║  │         [Club Logo/Banner]      │ ║
+║  │                                 │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  🏀 Basketball Club                   ║
+║  🏛️ Sports Council                    ║
+║  👥 120 members                       ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │  [+ Join]  [Message]  [Share]  │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  📝 About                             ║
+║  Shoot for the stars                  ║
+║                                       ║
+║  👨‍💼 Coordinators                      ║
+║  👤 Vikram Singh    👤 Neha Sharma   ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[Announcements] [Events] [Members]│ ║
+║  └─────────────────────────────────┘ ║
+║  ┌─────────────────────────────────┐ ║
+║  │ 📢 Tournament This Weekend       │ ║
+║  │ Register your team now...       │ ║
+║  │ 3 hours ago                     │ ║
+║  └─────────────────────────────────┘ ║
+║                   ⋮                   ║
+╚═══════════════════════════════════════╝
+```
+
+**Football Club (Sports Council):**
+```
+╔═══════════════════════════════════════╗
+║  [←]          Football Club       [⋮] ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │                                 │ ║
+║  │         [Club Logo/Banner]      │ ║
+║  │                                 │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  ⚽ Football Club                      ║
+║  🏛️ Sports Council                    ║
+║  👥 95 members                         ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │  [✓ Joined]  [Message]  [Share]│ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  📝 About                             ║
+║  Champions on the field                ║
+║                                       ║
+║  👨‍💼 Coordinators                      ║
+║  👤 Arjun Reddy    👤 Sneha Das       ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[Announcements] [Events] [Members]│ ║
+║  └─────────────────────────────────┘ ║
+║  ┌─────────────────────────────────┐ ║
+║  │ 📢 Match Schedule Released       │ ║
+║  │ Check your fixture dates...     │ ║
+║  │ 5 hours ago                     │ ║
+║  └─────────────────────────────────┘ ║
+║                   ⋮                   ║
+╚═══════════════════════════════════════╝
+```
+
+**Music Club (Cultural Council):**
+```
+╔═══════════════════════════════════════╗
+║  [←]            Music Club        [⋮] ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │                                 │ ║
+║  │         [Club Logo/Banner]      │ ║
+║  │                                 │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  🎵 Music Club                        ║
+║  🏛️ Cultural Council                  ║
+║  👥 150 members                       ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │  [+ Join]  [Message]  [Share]  │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  📝 About                             ║
+║  Harmony and rhythm                   ║
+║                                       ║
+║  👨‍💼 Coordinators                      ║
+║  👤 Kavya Nair    👤 Rahul Joshi     ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[Announcements] [Events] [Members]│ ║
+║  └─────────────────────────────────┘ ║
+║  ┌─────────────────────────────────┐ ║
+║  │ 📢 Open Mic Night Coming Soon   │ ║
+║  │ Sign up to perform...          │ ║
+║  │ 1 day ago                      │ ║
+║  └─────────────────────────────────┘ ║
+║                   ⋮                   ║
+╚═══════════════════════════════════════╝
+```
+
+**Drama Club (Cultural Council):**
+```
+╔═══════════════════════════════════════╗
+║  [←]            Drama Club        [⋮] ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │                                 │ ║
+║  │         [Club Logo/Banner]      │ ║
+║  │                                 │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  🎭 Drama Club                        ║
+║  🏛️ Cultural Council                  ║
+║  👥 80 members                        ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │  [+ Join]  [Message]  [Share]  │ ║
+║  └─────────────────────────────────┘ ║
+║                                       ║
+║  📝 About                             ║
+║  Express yourself on stage            ║
+║                                       ║
+║  👨‍💼 Coordinators                      ║
+║  👤 Meera Iyer    👤 Aditya Menon     ║
+║                                       ║
+║  ┌─────────────────────────────────┐ ║
+║  │[Announcements] [Events] [Members]│ ║
+║  └─────────────────────────────────┘ ║
+║  ┌─────────────────────────────────┐ ║
+║  │ 📢 Auditions for Spring Play    │ ║
+║  │ Tryouts next Monday...         │ ║
+║  │ 4 hours ago                    │ ║
+║  └─────────────────────────────────┘ ║
+║                   ⋮                   ║
+╚═══════════════════════════════════════╝
+```
+
+Features:
+- Dynamic header with club name and icon
+- Council badge (Technical/Sports/Cultural)
+- Member count display
+- Join status button (✓ Joined for joined clubs, + Join for others)
+- Club description from data
+- Coordinator names (varies by club)
+- Tabbed content: Announcements, Events, Members
+- Club-specific announcements feed
+- Message and Share actions available for all clubs
 ```
 
 #### 5. Event Detail Screen
@@ -281,6 +637,42 @@ Bottom Tab: [🏠] [🎯] [📅] [💬] [👤]
 ╚═══════════════════════════════════════╝
 ```
 
+**Navigation Flow:**
+```
+Events List Screen
+       │
+       │ (Tap event card)
+       ▼
+Event Detail Screen (Screen 5)
+       │
+       ├─── (Tap [←] back) ──→ Events List Screen
+       │
+       ├─── (Tap club name) ──→ Club Detail Screen
+       │
+       ├─── (Tap attendee avatar) ──→ Profile Screen
+       │
+       ├─── (Tap [⋮] menu) ──→ Share / Report options
+       │
+       ├─── (Coordinator: Tap [⋮] → Manage Attendance) ──→ QR Attendance Screen (Screen 7)
+       │
+       └─── (Tap attendee → Message) ──→ Chat Screen (Screen 6)
+```
+
+Features:
+- Event banner image with club branding
+- Event title, club name, and basic info (date, time, location)
+- RSVP status display with count (X / Y attendees)
+- RSVP action buttons: Going, Maybe, Not Going
+- Add to Calendar button (opens device calendar)
+- Full event description text
+- Attendees section with avatar grid (tap to view profile)
+- Event photos gallery (for past events only)
+- Menu button (⋮) for share, report, or coordinator actions
+- Coordinator-only: "Manage Attendance" option in menu
+- Tap club name to navigate to Club Detail Screen
+- Pull to refresh to update RSVP count and attendees
+- Real-time updates when others RSVP
+
 #### 6. Chat Screen
 ```
 ╔═══════════════════════════════════════╗
@@ -317,6 +709,44 @@ Encrypted indicator: 🔒 in header
 Own messages: Purple (#8B5CF6) bubble
 Others' messages: Dark gray (#27272A) bubble
 ```
+
+**Navigation Flow:**
+```
+Chats List Screen
+       │
+       │ (Tap chat conversation)
+       ▼
+Chat Screen (Screen 6)
+       │
+       ├─── (Tap [←] back) ──→ Chats List Screen
+       │
+       ├─── (Tap user name/avatar) ──→ Profile Screen
+       │
+       ├─── (Tap [⋮] menu) ──→ View Profile / Block / Delete Chat
+       │
+       └─── (Tap [+] in input) ──→ Attach Image / File / Location
+```
+
+Features:
+- Header with recipient name and avatar
+- Encrypted chat indicator (🔒) in header
+- Message bubbles with different colors:
+  * Own messages: Purple (#8B5CF6) aligned right
+  * Others' messages: Dark gray (#27272A) aligned left
+- Message status indicators:
+  * Single check (✓): Sent
+  * Double check (✓✓): Delivered
+  * Double check blue: Read
+- Timestamp display for each message
+- Input bar with attachment button ([+]) and voice message button ([🎤])
+- Real-time message updates via WebSocket
+- End-to-end encryption (ECDH + AES-GCM)
+- Pull to refresh to load older messages
+- Auto-scroll to latest message on load
+- Typing indicator (when recipient is typing)
+- Menu button (⋮) for profile view, block, or delete chat
+- Tap user name/avatar to view profile
+- Image/file preview and sharing support
 
 #### 7. QR Attendance (Coordinator)
 ```
@@ -355,6 +785,52 @@ Others' messages: Dark gray (#27272A) bubble
 ║  ✓ Ayush Kumar      2:03 PM           ║
 ║                   ⋮                   ║
 ╚═══════════════════════════════════════╝
+```
+
+**Navigation Flow:**
+```
+Event Detail Screen (Screen 5)
+       │
+       │ (Coordinator: Tap [⋮] → Manage Attendance)
+       ▼
+QR Attendance Screen (Screen 7)
+       │
+       ├─── (Tap [←] back) ──→ Event Detail Screen
+       │
+       ├─── (Tap user name in Recent Check-ins) ──→ Profile Screen
+       │
+       ├─── (Tap Manual Check-in) ──→ Search/Select User Modal
+       │
+       └─── (QR code scanned by student) ──→ Auto check-in (real-time update)
+```
+
+Features:
+- Event name and date/time display at top
+- Large QR code display for students to scan
+- Real-time attendance counter (X / Y checked in)
+- Manual Check-in button for coordinators to manually add attendees
+- Recent Check-ins list with:
+  * User name
+  * Check-in timestamp
+  * Tap name to view user profile
+- Real-time updates when students scan QR code
+- QR code contains encrypted event ID and timestamp
+- QR code expires after event end time
+- Coordinator-only access (students see different QR scan screen)
+- Pull to refresh to update attendance list
+- Export attendance list option (via menu)
+- Search functionality in manual check-in modal
+- Visual feedback when QR is scanned successfully
+
+**Complete Flow: Event Detail → Chat → QR Attendance**
+```
+Event Detail Screen (Screen 5)
+       │
+       ├─── (Tap attendee avatar) ──→ Profile Screen
+       │         │
+       │         └─── (Tap Message) ──→ Chat Screen (Screen 6)
+       │
+       └─── (Coordinator: Tap [⋮] → Manage Attendance) ──→ QR Attendance (Screen 7)
 ```
 
 #### 8. Admin Dashboard
